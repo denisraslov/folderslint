@@ -16,6 +16,7 @@ npm install -g structlint
 ```
 
 Setup a config file `structlint.json` in the root of the project.
+
 Run `structlint` to check the whole project or a directory (i.e. `/components`):
 
 ```sh
