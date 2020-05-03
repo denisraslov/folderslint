@@ -8,16 +8,7 @@
     "test": "jest",
     "precommit": "lint-staged && npm test"
   },
-  "keywords": [
-    "jest",
-    "snapshot",
-    "react",
-    "typescript",
-    "test",
-    "testing",
-    "component",
-    "generator"
-  ],
+  "keywords": [],
   "bin": "index.js",
   "files": [
     "index.js",
