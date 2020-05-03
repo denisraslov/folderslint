@@ -1,6 +1,8 @@
 # StructLint
 ### 📁 Project directory structure linter
 
+![structlint in action](https://raw.githubusercontent.com/denisraslov/structlint/master/demo.png)
+
 ## Why
 
 Directory structure rules are important part of any project. These rules help to raise clarity of the project and reduce its complexity. Having a clearly defined structure make developers always know where to put files and where to find them. If the project is big enough, it is necessary to avoid chaos in it.
