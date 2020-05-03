@@ -1,0 +1,52 @@
+{
+  "name": "struct-lint",
+  "version": "1.0.0",
+  "description": "Project directories structure linter",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint */*.js",
+    "test": "jest",
+    "precommit": "lint-staged && npm test"
+  },
+  "keywords": [
+    "jest",
+    "snapshot",
+    "react",
+    "typescript",
+    "test",
+    "testing",
+    "component",
+    "generator"
+  ],
+  "bin": "index.js",
+  "files": [
+    "index.js",
+    "src"
+  ],
+  "author": "Denis Raslov <denis.raslov@yandex.ru>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/denisraslov/snappify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/denisraslov/snappify/issues"
+  },
+  "homepage": "https://github.com/denisraslov/snappify#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "glob": "^7.1.6",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "husky": "^0.14.3",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.1.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  }
+}
