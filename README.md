@@ -1,5 +1,5 @@
 # StructLint
-> 📁Project directory structure linter
+### 📁 Project directory structure linter
 
 ## Why
 
@@ -15,4 +15,47 @@ Install `structlint` globally:
 npm install -g structlint
 ```
 
+Setup a config file `structlint.json` in the root of the project.
+Run `structlint` to check the whole project or a directory (i.e. `/components`):
+
+```sh
+structlint components
+```
+
 ## Configuration
+`structlint` needs configuration file named `structlint.json` in the root of the project.
+
+The example of the config:
+
+```json
+{
+  "root": "src",
+  "rules": ["components/*", "pages/components/*", "data"]
+}
+```
+
+`root` is the directory the structure of which should be checked.
+
+`rules` is an array of rules which define permitted directory pathes.
+
+### Rules syntax
+
+## Usage with [lint-staged](https://github.com/okonet/lint-staged)
+It is handy to use `structlint` together with `lint-staged`. In this case `structlint` checks only the files which were modified for a commit.
+
+For that, add `structlint` to the `lint-staged` section of your `package.json`.
+
+For example, this is how `package.json` can look like if you want to run `structlint` as a pre-commit hook via [husky](https://github.com/typicode/husky) tool:
+
+```json
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged",
+  }
+},
+"lint-staged": {
+  "*.{js,ts,tsx}": [
+    "structlint"
+  ]
+}
+  ```
