@@ -33,7 +33,7 @@ The example of the config:
 ```json
 {
   "root": "src",
-  "rules": ["components/*", "pages/components/*", "data"]
+  "rules": ["components/*", "pages/components/*/utils", "hooks"]
 }
 ```
 
@@ -42,6 +42,17 @@ The example of the config:
 `rules` is an array of rules which define permitted directory pathes.
 
 ### Rules syntax
+
+You can either specify the exact path of a directory or use `*` instead of a directory name if any directory accepted on that level. For example:
+
+Rule | Meaning
+--- | --- 
+`hooks` | ✅The directory `hooks` (and files in it) are accepted. ❌Any nested directory is not accepted.
+`components/*` | ✅The directory `components` are accepted. ✅Any *first level* nested directory is accepted. ❌Any *second level* nested directory is not accepted. 
+`components/*/utils` | ✅The directory `components` are accepted. ✅Any *first level* nested directory is accepted. ✅The *second level* nested directory `utils` is accepted. ❌Any other *second level* nested directory is not accepted.
+
+⚠️A rule like `components/*/utils` automatically make the `components` and `components/*` rules work. So, no need to specify a rule for every level directory. You need to specify the deepest path.
+
 
 ## Usage with [lint-staged](https://github.com/okonet/lint-staged)
 It is handy to use `structlint` together with `lint-staged`. In this case `structlint` checks only the files which were modified for a commit.
