@@ -1,7 +1,7 @@
 {
-  "name": "struct-lint",
-  "version": "1.0.0",
-  "description": "Project directories structure linter",
+  "name": "structlint",
+  "version": "0.9.0",
+  "description": "Project directory structure linter",
   "main": "index.js",
   "scripts": {
     "lint": "eslint */*.js",
@@ -18,12 +18,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/denisraslov/snappify.git"
+    "url": "https://github.com/denisraslov/structlint.git"
   },
   "bugs": {
-    "url": "https://github.com/denisraslov/snappify/issues"
+    "url": "https://github.com/denisraslov/structlint/issues"
   },
-  "homepage": "https://github.com/denisraslov/snappify#readme",
+  "homepage": "https://github.com/denisraslov/structlint#readme",
   "dependencies": {
     "chalk": "^4.0.0",
     "glob": "^7.1.6",
