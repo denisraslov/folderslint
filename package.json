@@ -8,7 +8,13 @@
     "test": "jest",
     "precommit": "lint-staged && npm test"
   },
-  "keywords": [],
+  "keywords": [
+    "lint",
+    "linter",
+    "structure",
+    "directory",
+    "project"
+  ],
   "bin": "index.js",
   "files": [
     "index.js",
