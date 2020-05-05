@@ -1,5 +1,13 @@
 {
   "extends": "standard",
+  "overrides": [
+    {
+      "files": ["__tests__/**/*.js"],
+      "env": {
+        "jest": true
+      }
+    }
+  ],
   "rules": {
     "semi": [0],
     "space-before-function-paren": [0],

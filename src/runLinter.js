@@ -1,7 +1,7 @@
-const parseConfig = require("./parseConfig");
-const { getExtendedRules } = require("./rules");
-const checkDirectories = require("./checkDirectories");
-const logError = require("./logError");
+const parseConfig = require('./parseConfig');
+const { getExtendedRules } = require('./rules');
+const checkDirectories = require('./checkDirectories');
+const logError = require('./logError');
 
 const logErrors = (errorPathes) => {
   errorPathes.forEach((path) => logError(path));
