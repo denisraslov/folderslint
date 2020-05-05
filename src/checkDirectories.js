@@ -1,9 +1,8 @@
 const { lstatSync } = require("fs");
 const { checkPath } = require("./rules");
-const logError = require("./logError");
 
 const checkDirectories = (filePaths, rules) => {
-  let areAllPathesPermitted = true;
+  const errorPathes = [];
 
   filePaths.forEach((path) => {
     const isDirectory = lstatSync(path).isDirectory();
@@ -18,16 +17,12 @@ const checkDirectories = (filePaths, rules) => {
       pathToCheck = directoryPath;
     }
 
-    isPathPermitted = checkPath(pathToCheck, rules);
-    if (!isPathPermitted) {
-      logError(pathToCheck);
+    if (!checkPath(pathToCheck, rules) && !errorPathes.includes(pathToCheck)) {
+      errorPathes.push(pathToCheck);
     }
-    areAllPathesPermitted = areAllPathesPermitted && isPathPermitted;
   });
 
-  if (!areAllPathesPermitted) {
-    process.exit(1);
-  }
+  return errorPathes;
 };
 
 module.exports = checkDirectories;
