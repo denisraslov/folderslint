@@ -1,6 +1,6 @@
 const { readFileSync } = require('fs');
 
-const CONFIG_PATH = 'structlint.json';
+const CONFIG_PATH = '.folderslintrc';
 
 const parseConfig = () => {
   try {
