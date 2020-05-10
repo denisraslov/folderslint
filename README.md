@@ -1,4 +1,4 @@
-# 📁FoldersLint
+# 📁 FoldersLint
 ### Project directory structure linter
 
 ![folderslint in action](https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png)
