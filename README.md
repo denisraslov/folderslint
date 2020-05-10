@@ -30,7 +30,7 @@ folderslint components
 
 The example of the config:
 
-```json
+```js
 {
   "root": "src", // optional
   "rules": [
