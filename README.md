@@ -1,7 +1,7 @@
-# StructLint
-### 📁 Project directory structure linter
+# 📁 FoldersLint
+### Project directory structure linter
 
-![structlint in action](https://raw.githubusercontent.com/denisraslov/structlint/master/demo.png)
+![folderslint in action](https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png)
 
 ## Why
 
@@ -11,22 +11,22 @@ Directory structure rules are important part of any project. These rules help to
 
 ## Quick Overview
 
-Install `structlint` globally:
+Install `folderslint` globally:
 
 ```sh
-npm install -g structlint
+npm install -g folderslint
 ```
 
-Setup a config file `structlint.json` in the root of the project.
+Setup a config file `.folderslintrc` in the root of the project.
 
-Run `structlint` to check the whole project or a directory (i.e. `/components`):
+Run `folderslint` to check the whole project or a directory (i.e. `/components`):
 
 ```sh
-structlint components
+folderslint components
 ```
 
 ## Configuration
-`structlint` needs configuration file named `structlint.json` in the root of the project.
+`folderslint` needs configuration file named `.folderslintrc` in the root of the project.
 
 The example of the config:
 
@@ -55,11 +55,11 @@ Rule | Meaning
 
 
 ## Usage with [lint-staged](https://github.com/okonet/lint-staged)
-It is handy to use `structlint` together with `lint-staged`. In this case `structlint` checks only the files which were modified for a commit.
+It is handy to use `folderslint` together with `lint-staged`. In this case `folderslint` checks only the files which were modified for a commit.
 
-For that, add `structlint` to the `lint-staged` section of your `package.json`.
+For that, add `folderslint` to the `lint-staged` section of your `package.json`.
 
-For example, this is how `package.json` can look like if you want to run `structlint` as a pre-commit hook via [husky](https://github.com/typicode/husky) tool:
+For example, this is how `package.json` can look like if you want to run `folderslint` as a pre-commit hook via [husky](https://github.com/typicode/husky) tool:
 
 ```json
 "husky": {
@@ -69,7 +69,7 @@ For example, this is how `package.json` can look like if you want to run `struct
 },
 "lint-staged": {
   "*.{js,ts,tsx}": [
-    "structlint"
+    "folderslint"
   ]
 }
   ```
