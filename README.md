@@ -33,7 +33,12 @@ The example of the config:
 ```json
 {
   "root": "src",
-  "rules": ["components/*", "pages/components/*/utils", "hooks", "legacy/**"]
+  "rules": [
+    "components/*",
+    "pages/components/*/utils",
+    "hooks",
+    "legacy/**"
+   ]
 }
 ```
 
