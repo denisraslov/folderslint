@@ -1,19 +1,24 @@
-const { lstatSync } = require("fs");
-const { checkPath } = require("./rules");
+const { lstatSync } = require('fs');
+const { checkPath } = require('./rules');
 
-const checkDirectories = (filePaths, rules) => {
+const checkDirectories = (filePaths, rules, root) => {
   const errorPathes = [];
 
   filePaths.forEach((path) => {
+    // Skip files which are not in the root directory
+    if (path.substr(0, root.length) !== root) {
+      return;
+    }
+
     const isDirectory = lstatSync(path).isDirectory();
     let pathToCheck;
 
     if (isDirectory) {
       pathToCheck = path;
     } else {
-      const splittedPath = path.split("/");
+      const splittedPath = path.split('/');
       splittedPath.pop();
-      const directoryPath = splittedPath.join("/");
+      const directoryPath = splittedPath.join('/');
       pathToCheck = directoryPath;
     }
 

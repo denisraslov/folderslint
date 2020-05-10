@@ -1,6 +1,6 @@
 {
   "name": "folderslint",
-  "version": "0.0.91",
+  "version": "0.0.92",
   "description": "Project directory structure linter",
   "main": "index.js",
   "scripts": {

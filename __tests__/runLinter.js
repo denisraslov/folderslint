@@ -21,6 +21,8 @@ const ERROR_MESSAGE = `${chalk.red(
   'error'
 )}  Directory is not allowed by config`;
 
+const SUCCESS_MESSAGE = '✅ All checked directories are allowed by config';
+
 beforeEach(() => {
   console.log.mockReset();
 });
@@ -41,7 +43,7 @@ test('should accept files with direct pathes in config', () => {
   ]);
 
   expect(process.exit).not.toHaveBeenCalled();
-  expect(console.log).not.toHaveBeenCalled();
+  expect(console.log).toHaveBeenCalledWith(SUCCESS_MESSAGE);
 });
 
 test('should accept files with * in config', () => {
@@ -64,7 +66,7 @@ test('should accept files with * in config', () => {
   ]);
 
   expect(process.exit).not.toHaveBeenCalled();
-  expect(console.log).not.toHaveBeenCalled();
+  expect(console.log).toHaveBeenCalledWith(SUCCESS_MESSAGE);
 });
 
 test('should not accept files with direct pathes in config', () => {
@@ -98,6 +100,11 @@ test('should not accept files with direct pathes in config', () => {
     chalk.underline('cwd/src/pages/utils')
   );
   expect(console.log).toHaveBeenNthCalledWith(6, ERROR_MESSAGE);
+  expect(console.log).toHaveBeenNthCalledWith(7, '');
+  expect(console.log).toHaveBeenNthCalledWith(
+    8,
+    'folderslint: 3 error(s) found'
+  );
 });
 
 test('should not accept files with * in config', () => {
@@ -130,4 +137,9 @@ test('should not accept files with * in config', () => {
     chalk.underline('cwd/src/pages/Main/utils')
   );
   expect(console.log).toHaveBeenNthCalledWith(6, ERROR_MESSAGE);
+  expect(console.log).toHaveBeenNthCalledWith(7, '');
+  expect(console.log).toHaveBeenNthCalledWith(
+    8,
+    'folderslint: 3 error(s) found'
+  );
 });

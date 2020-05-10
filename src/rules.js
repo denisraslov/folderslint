@@ -1,4 +1,4 @@
-const getExtendedRules = (root, rules) => {
+const getExtendedRules = (root = '', rules) => {
   const extendedRules = rules;
   rules.forEach((rule) => {
     const splittedRule = rule.split('/');
@@ -10,12 +10,27 @@ const getExtendedRules = (root, rules) => {
       }
     });
   });
-  return extendedRules.map((rule) => `${process.cwd()}/${root}/${rule}`);
+
+  const hasRootConfigured = root && root !== '.';
+  const extendedRoot = `${process.cwd()}${hasRootConfigured ? `/${root}` : ''}`;
+  const extendedRulesWithRoot = extendedRules.map(
+    (rule) => (extendedRoot ? `${extendedRoot}/` : '') + rule
+  );
+
+  return {
+    root: extendedRoot,
+    rules: [...extendedRulesWithRoot, extendedRoot]
+  };
 };
 
 const isPathMatchRule = (path, rule) => {
   const splittedPath = path.split('/');
   const splittedRule = rule.split('/');
+
+  if (rule.includes('**')) {
+    const [specifiedPath] = rule.split('/**');
+    return path.substr(0, specifiedPath.length) === specifiedPath;
+  }
 
   if (splittedPath.length !== splittedRule.length) {
     return false;
