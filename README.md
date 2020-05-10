@@ -1,5 +1,5 @@
 # 📁 FoldersLint
-### Project directory structure linter
+### Directory structure linter for JavaScript projects
 
 ![folderslint in action](https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png)
 
