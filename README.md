@@ -32,7 +32,7 @@ The example of the config:
 
 ```json
 {
-  "root": "src",
+  "root": "src", // optional
   "rules": [
     "components/*",
     "pages/components/*/utils",
@@ -46,6 +46,11 @@ The example of the config:
 
 `rules` is an array of rules which define permitted directory pathes.
 
+### Root directory
+
+You have to specify `root` if you want to check structure in a specific directory. Directories which are out if the `root` will not be checked.
+If you want all the directories of the project to be checked, you don't need to specify `root`.
+
 ### Rules syntax
 
 There are 3 ways to specify a rule:
@@ -57,13 +62,14 @@ For example:
 
 Rule | Meaning
 --- | --- 
-`hooks` | ✅The directory `hooks` (and files in it) are accepted. ❌Any nested directory is not accepted.
-`components/*` | ✅The directory `components` are accepted. ✅Any *first level* nested directory is accepted. ❌Any *second level* nested directory is not accepted. 
-`components/*/utils` | ✅The directory `components` are accepted. ✅Any *first level* nested directory is accepted. ✅The *second level* nested directory `utils` is accepted. ❌Any other *second level* nested directory is not accepted.
-`legacy/**` |
+`hooks` | ✅The directory `hooks` (and files in it) is accepted. ❌Any nested directory is not accepted.
+`components/*` | ✅The directory `components` is accepted. ✅Any *first level* nested directory is accepted. ❌Any *second level* nested directory is not accepted. 
+`components/*/utils` | ✅The directory `components` is accepted. ✅Any *first level* nested directory is accepted. ✅The *second level* nested directory `utils` is accepted. ❌Any other *second level* nested directory is not accepted.
+`legacy/**` | ✅The directory `legacy` is accepted. ✅Any nested directory on *any level* is accepted.
 
-⚠️A rule like `components/*/utils` automatically make the `components` and `components/*` rules work. So, no need to specify a rule for every level directory. You need to specify the deepest path.
+⚠️ A rule like `components/*/utils` automatically make the `components` and `components/*` rules work. So, no need to specify a rule for every level directory. You need to specify the deepest path.
 
+⚠️ It's not recommended to overuse `**` pattern. It lets absence of structure to sprout in your project. Still it could be useful for some directories which have messy structure by its nature - i.e. `node_modules`, not maintained legacy directories.
 
 ## Usage with [lint-staged](https://github.com/okonet/lint-staged)
 It is handy to use `folderslint` together with `lint-staged`. In this case `folderslint` checks only the files which were modified for a commit.
