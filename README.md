@@ -7,7 +7,7 @@
 
 Directory structure rules are important part of any project. These rules help to raise clarity of the project and reduce its complexity. Having a clearly defined structure make developers always know where to put files and where to find them. If the project is big enough, it is necessary to avoid chaos in it.
 
-`structlint` let you configure directory structure rules and check if existed or new files fit these rules.
+`folderslint` let you configure directory structure rules and check if existed or new files fit these rules.
 
 ## Quick Overview
 
