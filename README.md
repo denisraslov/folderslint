@@ -52,7 +52,7 @@ The example of the config:
 
 `root` is the directory the structure of which should be checked.
 
-`rules` is an array of rules which define permitted directory pathes.
+`rules` is an array of rules which define permitted directory paths.
 
 ### Root directory
 
