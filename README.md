@@ -3,7 +3,15 @@
 
 ![folderslint in action](https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png)
 
+✅ Easy configured in a single file
+
+✅ Flexible & Fast
+
+✅ Can be used with [lint-staged](https://github.com/okonet/lint-staged)
+
 ## Why
+
+*Make you project sctructure pretty by linting it* 🗂
 
 Directory structure rules are important part of any project. These rules help to raise clarity of the project and reduce its complexity. Having a clearly defined structure make developers always know where to put files and where to find them. If the project is big enough, it is necessary to avoid chaos in it.
 
