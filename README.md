@@ -3,7 +3,7 @@
 
 ![folderslint in action](https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png)
 
-✅ Easy configured in a single file
+✅ Easily configured in a single file
 
 ✅ Flexible & Fast
 
