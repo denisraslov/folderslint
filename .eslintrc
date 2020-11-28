@@ -1,5 +1,5 @@
 {
-  "extends": "standard",
+  "extends": ["standard", "prettier"],
   "overrides": [
     {
       "files": ["__tests__/**/*.js"],

@@ -1,34 +1,38 @@
-const getExtendedRules = (root = '', rules) => {
+const posixSeparatedCwd = require("./posixSeparatedCwd");
+
+const getExtendedRules = (root = "", rules) => {
   const extendedRules = rules;
   rules.forEach((rule) => {
-    const splittedRule = rule.split('/');
-    let extendedRule = '';
+    const splittedRule = rule.split("/");
+    let extendedRule = "";
     splittedRule.forEach((rulePart) => {
-      extendedRule += (extendedRule ? '/' : '') + rulePart;
+      extendedRule += (extendedRule ? "/" : "") + rulePart;
       if (!extendedRules.includes(extendedRule)) {
         extendedRules.push(extendedRule);
       }
     });
   });
 
-  const hasRootConfigured = root && root !== '.';
-  const extendedRoot = `${process.cwd()}${hasRootConfigured ? `/${root}` : ''}`;
+  const hasRootConfigured = root && root !== ".";
+  const extendedRoot = `${posixSeparatedCwd()}${
+    hasRootConfigured ? `/${root}` : ""
+  }`;
   const extendedRulesWithRoot = extendedRules.map(
-    (rule) => (extendedRoot ? `${extendedRoot}/` : '') + rule
+    (rule) => (extendedRoot ? `${extendedRoot}/` : "") + rule
   );
 
   return {
     root: extendedRoot,
-    rules: [...extendedRulesWithRoot, extendedRoot]
+    rules: [...extendedRulesWithRoot, extendedRoot],
   };
 };
 
 const isPathMatchRule = (path, rule) => {
-  const splittedPath = path.split('/');
-  const splittedRule = rule.split('/');
+  const splittedPath = path.split("/");
+  const splittedRule = rule.split("/");
 
-  if (rule.includes('**')) {
-    const [specifiedPath] = rule.split('/**');
+  if (rule.includes("**")) {
+    const [specifiedPath] = rule.split("/**");
     return path.substr(0, specifiedPath.length) === specifiedPath;
   }
 
@@ -36,7 +40,7 @@ const isPathMatchRule = (path, rule) => {
     return false;
   }
   return splittedRule.reduce((acc, rulePart, i) => {
-    const isPermitted = rulePart !== '*' ? rulePart === splittedPath[i] : true;
+    const isPermitted = rulePart !== "*" ? rulePart === splittedPath[i] : true;
     return acc && isPermitted;
   }, true);
 };
@@ -50,5 +54,5 @@ const checkPath = (path, rules) => {
 
 module.exports = {
   getExtendedRules,
-  checkPath
+  checkPath,
 };
