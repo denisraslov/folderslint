@@ -13,11 +13,11 @@
 
 <br>
 
-✅ Easily configured in a single file
+✅  Easily configured in a single file
 
-✅ Flexible & Fast
+✅  Flexible & Fast
 
-✅ Can be used with [lint-staged](https://github.com/okonet/lint-staged)
+✅  Can be used with [lint-staged](https://github.com/okonet/lint-staged)
 
 ## Why
 
