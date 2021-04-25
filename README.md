@@ -1,7 +1,14 @@
-# 📁 FoldersLint
-### Directory structure linter for JavaScript projects
+<h1 align="center">
+  FoldersLint
+  <br>
+  <img src="https://ph-files.imgix.net/ca08c2f9-856e-4995-b500-85935be555e7.png" alt="FoldersLint logo" title="FoldersLint logo" width="110">
+  <br>
+</h1>
+<h3 align="center"><b>Directory structure linter for JavaScript projects</b></h3>
 
 ![folderslint in action](https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png)
+
+<br>
 
 ✅ Easily configured in a single file
 
