@@ -1,8 +1,7 @@
+
 <h1 align="center">
   FoldersLint
-  <p style="padding: 10px" />
-</h1>
-<h1 align="center">
+ <br>
   <img src="https://ph-files.imgix.net/ca08c2f9-856e-4995-b500-85935be555e7.png" alt="FoldersLint logo" title="FoldersLint logo" width="110">
   <br>
 </h1>
