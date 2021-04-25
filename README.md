@@ -1,17 +1,15 @@
 
 <h1 align="center">
   FoldersLint
+  <br>
  <br>
   <img src="https://ph-files.imgix.net/ca08c2f9-856e-4995-b500-85935be555e7.png" alt="FoldersLint logo" title="FoldersLint logo" width="110">
   <br>
 </h1>
 <h3 align="center"><b>Directory structure linter for JavaScript projects</b></h3>
-
-<br>
-
-<h3 align="center">
-    <img src="https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png" alt="FoldersLint in action" title="FoldersLint in action" height="60">
-</h3>
+<p align="center">
+   <img src="https://raw.githubusercontent.com/denisraslov/folderslint/master/demo.png" alt="FoldersLint in action" title="FoldersLint in action" height="60">
+</p>
 
 <br>
 
