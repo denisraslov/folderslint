@@ -1,16 +1,11 @@
 
-<h1 align="center">
-  FoldersLint
-  <br style="line-height: 0.1rem;">
-  <br style="line-height: 0.1rem;">
-  <img src="https://ph-files.imgix.net/ca08c2f9-856e-4995-b500-85935be555e7.png" alt="FoldersLint logo" title="FoldersLint logo" width="110">
-  <br>
-</h1>
-<h3 align="center"><b>Directory structure linter for JavaScript projects</b></h3>
+# FoldersLint <img src="https://ph-files.imgix.net/ca08c2f9-856e-4995-b500-85935be555e7.png" alt="FoldersLint logo" width="90" height="90" align="right" />
+
+Directory structure linter for JavaScript projects
+
 <p align="center">
    <img src="https://thumbnails.visme.co/c0/e6/f2/83/08271a1cdafd2c288d7f2ec677dda7b7.png" alt="FoldersLint in action" title="FoldersLint in action" height="400">
 </p>
-<br>
 
 ✅  Easily configured in a single file
 
