@@ -3,15 +3,13 @@
 
 Directory structure linter for JavaScript projects
 
-<p align="center">
-   <img src="https://thumbnails.visme.co/c0/e6/f2/83/08271a1cdafd2c288d7f2ec677dda7b7.png" alt="FoldersLint in action" title="FoldersLint in action" height="400">
-</p>
+<img src="https://thumbnails.visme.co/c0/e6/f2/83/08271a1cdafd2c288d7f2ec677dda7b7.png" alt="FoldersLint in action" title="FoldersLint in action" height="390" style="margin-left: -200px;">
 
-✅  Easily configured in a single file
+✅ &nbsp;&nbsp;Easily configured in a single file
 
-✅  Flexible & Fast
+✅ &nbsp;&nbsp;Flexible & Fast
 
-✅  Can be used with [lint-staged](https://github.com/okonet/lint-staged)
+✅ &nbsp;&nbsp;Can be used with [lint-staged](https://github.com/okonet/lint-staged)
 
 ## Why
 
