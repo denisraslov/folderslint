@@ -72,10 +72,10 @@ For example:
 
 Rule | Meaning
 --- | --- 
-`hooks` | ✅ The directory `hooks` (and files in it) is accepted.<br/> ❌ Any nested directory is not accepted.
-`components/*` | ✅ The directory `components` is accepted.<br/> ✅ Any *first level* nested directory is accepted.<br/> ❌ Any *second level* nested directory is not accepted. 
-`components/*/utils` | ✅ The directory `components` is accepted.<br/> ✅ Any *first level* nested directory is accepted.<br/> ✅ The *second level* nested directory `utils` is accepted.<br/> ❌ Any other *second level* nested directory is not accepted.
-`legacy/**` | ✅ The directory `legacy` is accepted.<br/> ✅ Any nested directory on *any level* is accepted.
+`hooks` | ✅&nbsp;&nbsp;The directory `hooks` (and files in it) is accepted.<br/> ❌&nbsp;&nbsp;Any nested directory is not accepted.
+`components/*` | ✅&nbsp;&nbsp;The directory `components` is accepted.<br/> ✅&nbsp;&nbsp;Any *first level* nested directory is accepted.<br/> ❌&nbsp;&nbsp;Any *second level* nested directory is not accepted. 
+`components/*/utils` | ✅&nbsp;&nbsp;The directory `components` is accepted.<br/> ✅&nbsp;&nbsp;Any *first level* nested directory is accepted.<br/> ✅&nbsp;&nbsp;The *second level* nested directory `utils` is accepted.<br/> ❌&nbsp;&nbsp;Any other *second level* nested directory is not accepted.
+`legacy/**` | ✅&nbsp;&nbsp;The directory `legacy` is accepted.<br/> ✅&nbsp;&nbsp;Any nested directory on *any level* is accepted.
 
 ⚠️ A rule like `components/*/utils` automatically make the `components` and `components/*` rules work. So, no need to specify a rule for every level directory. You need to specify the deepest path.
 
