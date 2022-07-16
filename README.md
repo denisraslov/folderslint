@@ -58,7 +58,7 @@ The example of the config:
 
 ### Root directory
 
-You have to specify `root` if you want to check structure in a specific directory. Directories which are out if the `root` will not be checked.
+You have to specify `root` if you want to check structure in a specific directory. Directories which are out of the `root` will not be checked.
 If you want all the directories of the project to be checked, you don't need to specify `root`.
 
 ### Rules syntax
