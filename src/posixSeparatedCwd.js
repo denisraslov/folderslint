@@ -1,5 +1,5 @@
-const path = require("path");
+const path = require('path')
 
 module.exports = function posixSeparatedCwd() {
-  return process.cwd().split(path.sep).join(path.posix.sep);
-};
+  return process.cwd().split(path.sep).join(path.posix.sep)
+}
