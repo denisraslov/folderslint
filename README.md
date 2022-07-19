@@ -1,13 +1,15 @@
 
 # FoldersLint <img src="https://ph-files.imgix.net/ca08c2f9-856e-4995-b500-85935be555e7.png" alt="FoldersLint logo" width="90" height="90" align="right" />
 
-Directory structure linter for JavaScript projects
+Directory structure linter for Front-End projects
 
 <img src="https://thumbnails.visme.co/c0/e6/f2/83/08271a1cdafd2c288d7f2ec677dda7b7.png" alt="FoldersLint in action" title="FoldersLint in action" height="390" style="margin-left: -200px;">
 
-✅ &nbsp;&nbsp;Easily configured in a single file
+✅ &nbsp;&nbsp;Easily configured with simple rules in a single file
 
-✅ &nbsp;&nbsp;Flexible & Fast
+✅ &nbsp;&nbsp;Incredibly fast
+
+✅ &nbsp;&nbsp;Support for Windows, MacOS and Linux
 
 ✅ &nbsp;&nbsp;Can be used with [lint-staged](https://github.com/okonet/lint-staged)
 
