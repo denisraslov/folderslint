@@ -31,18 +31,24 @@ const isPathMatchRule = (path, rule) => {
   const splittedPath = path.split('/')
   const splittedRule = rule.split('/')
 
-  if (rule.includes('**')) {
-    const [specifiedPath] = rule.split('/**')
-    return path.substr(0, specifiedPath.length) === specifiedPath
-  }
-
-  if (splittedPath.length !== splittedRule.length) {
-    return false
-  }
-  return splittedRule.reduce((acc, rulePart, i) => {
-    const isPermitted = rulePart !== '*' ? rulePart === splittedPath[i] : true
+  const isValid = splittedPath.reduce((acc, pathPart, i) => {
+    const rulePart = splittedRule[i]
+    const isPermitted =
+      rulePart !== '*' && rulePart !== '**' && rulePart !== undefined
+        ? pathPart === rulePart
+        : true
     return acc && isPermitted
   }, true)
+
+  if (!isValid) {
+    return false
+  }
+
+  if (!rule.includes('**') && splittedPath.length > splittedRule.length) {
+    return false
+  }
+
+  return true
 }
 
 const checkPath = (path, rules) => {

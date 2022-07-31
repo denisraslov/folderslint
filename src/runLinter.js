@@ -1,4 +1,4 @@
-const parseConfig = require('./parseConfig')
+const { parseConfig } = require('./parseConfig')
 const { getExtendedRules } = require('./rules')
 const checkDirectories = require('./checkDirectories')
 const { logError, logErrorsStats, logSuccess } = require('./loggers')
