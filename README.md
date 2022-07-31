@@ -68,7 +68,9 @@ If you want all the directories of the project to be checked, you don't need to 
 There are 3 ways to specify a rule:
 - the exact path of a directory,
 - `*` instead of a directory name if any directory accepted on that level,
-- `**` instead of a directory name if any directory accepted on any lower level.
+- `**` **at the end of a rule** instead of a directory name if any directory accepted on any lower level. 
+
+⚠️ `**` **can be used only at the end of a rule** because it doesn't make sense to use it at the middle of a rule. It would make any number of nested directories in the middle of a path accepted which gives too much flexibility for the idea of clearly defined directory structure rules.
 
 For example:
 
@@ -78,6 +80,7 @@ Rule | Meaning
 `components/*` | ✅&nbsp;&nbsp;The directory `components` is accepted.<br/> ✅&nbsp;&nbsp;Any *first level* nested directory is accepted.<br/> ❌&nbsp;&nbsp;Any *second level* nested directory is not accepted. 
 `components/*/utils` | ✅&nbsp;&nbsp;The directory `components` is accepted.<br/> ✅&nbsp;&nbsp;Any *first level* nested directory is accepted.<br/> ✅&nbsp;&nbsp;The *second level* nested directory `utils` is accepted.<br/> ❌&nbsp;&nbsp;Any other *second level* nested directory is not accepted.
 `legacy/**` | ✅&nbsp;&nbsp;The directory `legacy` is accepted.<br/> ✅&nbsp;&nbsp;Any nested directory on *any level* is accepted.
+`components/*/legacy/**` | ✅&nbsp;&nbsp;The directory `components` is accepted.<br/> ✅&nbsp;&nbsp;Any *first level* nested directory is accepted.<br/> ✅&nbsp;&nbsp;The *second level* nested directory `legacy` is accepted.<br/> ❌&nbsp;&nbsp;Any other *second level* nested directory is not accepted.<br/> ✅&nbsp;&nbsp;Any nested directory on *any level* inside of *legacy* directiry is accepted.
 
 ⚠️ A rule like `components/*/utils` automatically make the `components` and `components/*` rules work. So, no need to specify a rule for every level directory. You need to specify the deepest path.
 
