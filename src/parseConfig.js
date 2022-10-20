@@ -20,7 +20,11 @@ const validateParsedConfig = (config) => {
       process.exit(1)
     }
 
-    if (rule.includes("!") && rule.startsWith("!") && rule.split("!").length > 2) {
+    if (
+      rule.includes('!') &&
+      rule.startsWith('!') &&
+      rule.split('!').length > 2
+    ) {
       console.error(`Invalid rule: ${rule}`)
       console.error('A rule can have at most one ! at the beginning')
       process.exit(1)

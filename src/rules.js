@@ -30,7 +30,7 @@ const getExtendedRules = (root = '', rules) => {
 const isPathMatchRule = (path, rule) => {
   const splittedPath = path.split('/')
 
-  const isNegation = rule.startsWith("!");
+  const isNegation = rule.startsWith('!')
   const splittedRule = (isNegation ? rule.substring(1) : rule).split('/')
 
   const isValid = splittedPath.reduce((acc, pathPart, i) => {

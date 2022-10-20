@@ -203,9 +203,7 @@ test('should not accept files with ! (negation) in the beginning of the rule ', 
     rules: ['!pages/*'],
   })
 
-  runLinter([
-    'cwd/src/pages/components',
-  ])
+  runLinter(['cwd/src/pages/components'])
 
   expect(process.exit).toHaveBeenLastCalledWith(1)
 
