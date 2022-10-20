@@ -29,7 +29,9 @@ const getExtendedRules = (root = '', rules) => {
 
 const isPathMatchRule = (path, rule) => {
   const splittedPath = path.split('/')
-  const splittedRule = rule.split('/')
+
+  const isNegation = rule.startsWith('!')
+  const splittedRule = (isNegation ? rule.substring(1) : rule).split('/')
 
   const isValid = splittedPath.reduce((acc, pathPart, i) => {
     const rulePart = splittedRule[i]
@@ -41,14 +43,14 @@ const isPathMatchRule = (path, rule) => {
   }, true)
 
   if (!isValid) {
-    return false
+    return isNegation
   }
 
   if (!rule.includes('**') && splittedPath.length > splittedRule.length) {
-    return false
+    return isNegation
   }
 
-  return true
+  return !isNegation
 }
 
 const checkPath = (path, rules) => {

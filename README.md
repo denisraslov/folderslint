@@ -81,6 +81,7 @@ Rule | Meaning
 `components/*/utils` | ✅&nbsp;&nbsp;The directory `components` is accepted.<br/> ✅&nbsp;&nbsp;Any *first level* nested directory is accepted.<br/> ✅&nbsp;&nbsp;The *second level* nested directory `utils` is accepted.<br/> ❌&nbsp;&nbsp;Any other *second level* nested directory is not accepted.
 `legacy/**` | ✅&nbsp;&nbsp;The directory `legacy` is accepted.<br/> ✅&nbsp;&nbsp;Any nested directory on *any level* is accepted.
 `components/*/legacy/**` | ✅&nbsp;&nbsp;The directory `components` is accepted.<br/> ✅&nbsp;&nbsp;Any *first level* nested directory is accepted.<br/> ✅&nbsp;&nbsp;The *second level* nested directory `legacy` is accepted.<br/> ❌&nbsp;&nbsp;Any other *second level* nested directory is not accepted.<br/> ✅&nbsp;&nbsp;Any nested directory on *any level* inside of *legacy* directory is accepted.
+`!pages/*` | ❌&nbsp;&nbsp;Any nested directory inside `pages` is not accepted.
 
 ⚠️ A rule like `components/*/utils` automatically make the `components` and `components/*` rules work. So, no need to specify a rule for every level directory. You need to specify the deepest path.
 
