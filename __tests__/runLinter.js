@@ -196,3 +196,22 @@ test('should not accept files with * and ** in the same rule', () => {
     'folderslint: 2 error(s) found'
   )
 })
+
+test('should not accept files with ! (negation) in the beginning of the rule ', () => {
+  parseConfig.mockReturnValue({
+    root: 'src',
+    rules: ['!pages/*'],
+  })
+
+  runLinter([
+    'cwd/src/pages/components',
+  ])
+
+  expect(process.exit).toHaveBeenLastCalledWith(1)
+
+  expect(console.log).toHaveBeenNthCalledWith(
+    1,
+    chalk.underline('cwd/src/pages/components')
+  )
+  expect(console.log).toHaveBeenNthCalledWith(2, ERROR_MESSAGE)
+})
